@@ -11,11 +11,16 @@ Arguments:
   [FOLDER_TO_HOST]  Folder to host, current by default
 
 Options:
-      --ssl                                        Should use SSL, false by default
-  -p, --port <PORT>                                Specifies hosting port, "8080" by default
+      --ssl
+          Should use SSL, false by default
+  -p, --port <PORT>
+          Specifies hosting port, "8080" by default
   -c, --certificates-folder <CERTIFICATES_FOLDER>
-  -h, --help                                       Print help
-  -V, --version                                    Print version
+          Specifies folder containing "key.pem" and "cert.pem" required for ssl hosting, defaults to current folder
+  -h, --help
+          Print help
+  -V, --version
+          Print version
 ```
 
 It makes testing Unity webgl games easy, even allows connecting with different domains(less CORS issues during tests).
