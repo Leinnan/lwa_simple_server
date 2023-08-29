@@ -10,10 +10,10 @@ pub struct SimpleServer {
     /// Should use SSL, false by default
     #[arg(long)]
     pub ssl: bool,
-    /// Specifies hosting address, "localhost:8080" by default
+    /// Specifies hosting port, "8080" by default
     #[arg(short, long)]
-    pub address: Option<String>,
-    // Specifies folder containing "key.pem" and "cert.pem" required for ssl hosting, defaults to current folder
+    pub port: Option<i32>,
+    /// Specifies folder containing "key.pem" and "cert.pem" required for ssl hosting, defaults to current folder
     #[arg(short, long)]
     certificates_folder: Option<PathBuf>,
 }
@@ -27,18 +27,13 @@ impl SimpleServer {
         }
     }
     pub fn get_address(&self) -> String {
-        if self.address.is_some() {
-            return self.address.clone().unwrap();
-        }
-        "localhost:8080".to_string()
+        format!("localhost:{}", self.port.clone().unwrap_or(8080))
     }
 
     fn get_certificates_folder(&self) -> PathBuf {
-        if self.certificates_folder.is_some() {
-            self.certificates_folder.clone().unwrap()
-        } else {
-            PathBuf::from(".")
-        }
+        self.certificates_folder
+            .clone()
+            .unwrap_or(PathBuf::from("."))
     }
 
     pub fn get_private_key_path(&self) -> PathBuf {

@@ -1,8 +1,16 @@
 [package]
 name = "lwa_simple_server"
-version = "0.2.0"
+version = "0.1.0"
 authors = ["Mev Lyshkin <mev_lyshkin@protonmail.com>"]
 edition = "2018"
+repository = "https://github.com/Leinnan/lwa_simple_server"
+homepage = "https://github.com/Leinnan/lwa_simple_server"
+readme = "README.md"
+license = "MIT"
+keywords = ["server", "static", "single-page", "https"]
+categories = ["command-line-utilities", "development-tools"]
+description = "Simple server made with hosting locally webgl games in mind."
+exclude = ["/.github"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
