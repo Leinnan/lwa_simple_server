@@ -26,22 +26,13 @@ To start run it in folder that should be root folder of hosted site:
 
 ```bash
 cd desired/folder
-lwa_simple_server
+lwa_simple_server "folder_to_host"
 ```
 
-After first start of the program in configs folder will be created `lwa_simple_server` directory with `lwa_simple_server.toml` in it with config values:
-
-```toml
-folder_to_host = '/example/path/TestProject'
-bind_address = 'localhost:8000'
-private_key_file = 'key.pem'
-certificate_chain_file = 'cert.pem'
-use_ssl = false
-```
 
 ## SSL
 
-If you would like to use OpenSSL create key with command below and pass paths to generated files in config above in order to use it:
+If you would like to use OpenSSL create key with command below and pass paths to generated files as arguments in command in order to use it:
 
 ```bash
 openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'
