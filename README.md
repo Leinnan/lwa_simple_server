@@ -36,9 +36,7 @@ It makes testing Unity webgl games easy, even allows connecting with different d
 For now it is required to have cargo and rust installed:
 
 ```bash
-git clone https://github.com/Leinnan/lwa_simple_server.git
-cd lwa_simple_server
-cargo install --path .
+cargo install lwa_simple_server
 ```
 
 ## Usage
