@@ -1,5 +1,7 @@
 # lwa_simple_server
 
+[![build](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml/badge.svg)](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml)
+
 Simple server made with hosting locally webgl games in mind.
 
 It makes testing Unity webgl games easy, even allows connecting with different domains(less CORS issues during tests).

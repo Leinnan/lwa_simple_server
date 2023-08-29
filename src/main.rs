@@ -17,7 +17,8 @@ async fn main() -> std::io::Result<()> {
         // `openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'`
 
         println!(
-            "Starting server on address: {} with hosted folder: {} wit SSL: {}",
+            "Starting server on address: {}://{} with hosted folder: {} [SSL={}]",
+            if app_args.ssl{ "https" } else {"http"},
             app_args.get_address(),
             path,
             app_args.ssl
