@@ -1,5 +1,8 @@
 # lwa_simple_server
 
+[![crates.io](https://img.shields.io/crates/v/lwa_simple_server.svg)](https://crates.io/crates/lwa_simple_server)
+[![license](https://img.shields.io/crates/l/lwa_simple_server)](https://github.com/NiklasEi/lwa_simple_server#license)
+[![crates.io](https://img.shields.io/crates/d/lwa_simple_server.svg)](https://crates.io/crates/lwa_simple_server)
 [![build](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml/badge.svg)](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml)
 
 ```
