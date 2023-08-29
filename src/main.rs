@@ -12,7 +12,7 @@ async fn main() -> std::io::Result<()> {
     let app_args = crate::app::SimpleServer::parse();
     env::set_var("RUST_LOG", "actix_web=debug,actix_server=info");
     env_logger::init();
-    let path = app_args.folder_to_host.clone();
+    let path = app_args.get_folder_to_host();
     {
         // `openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 365 -subj '/CN=localhost'`
 
@@ -20,7 +20,7 @@ async fn main() -> std::io::Result<()> {
             "Starting server on address: {}://{} with hosted folder: {} [SSL={}]",
             if app_args.ssl{ "https" } else {"http"},
             app_args.get_address(),
-            path,
+            path.display(),
             app_args.ssl
         );
     }

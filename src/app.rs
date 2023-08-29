@@ -5,8 +5,8 @@ use std::path::PathBuf;
 #[derive(Debug, Parser, Clone)]
 #[command(name = "lwa_simple_server", version = "0.1.0", author = "Mev Lyshkin")]
 pub struct SimpleServer {
-    /// Folder to host
-    pub folder_to_host: String,
+    /// Folder to host, current by default
+    pub folder_to_host: Option<PathBuf>,
     /// Should use SSL, false by default
     #[arg(long)]
     pub ssl: bool,
@@ -19,6 +19,13 @@ pub struct SimpleServer {
 }
 
 impl SimpleServer {
+    pub fn get_folder_to_host(&self) -> PathBuf {
+        if self.folder_to_host.is_some() {
+            self.folder_to_host.clone().unwrap()
+        } else {
+            PathBuf::from(".")
+        }
+    }
     pub fn get_address(&self) -> String {
         if self.address.is_some() {
             return self.address.clone().unwrap();

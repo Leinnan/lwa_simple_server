@@ -2,7 +2,26 @@
 
 [![build](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml/badge.svg)](https://github.com/Leinnan/lwa_simple_server/actions/workflows/rust.yml)
 
-Simple server made with hosting locally webgl games in mind.
+```
+Simple server made with hosting locally webgl games in mind
+
+Usage: lwa_simple_server [OPTIONS] [FOLDER_TO_HOST]
+
+Arguments:
+  [FOLDER_TO_HOST]  Folder to host, current by default
+
+Options:
+      --ssl
+          Should use SSL, false by default
+  -a, --address <ADDRESS>
+          Specifies hosting address, "localhost:8080" by default
+  -c, --certificates-folder <CERTIFICATES_FOLDER>
+
+  -h, --help
+          Print help
+  -V, --version
+          Print version
+```
 
 It makes testing Unity webgl games easy, even allows connecting with different domains(less CORS issues during tests).
 
@@ -28,7 +47,7 @@ To start run it in folder that should be root folder of hosted site:
 
 ```bash
 cd desired/folder
-lwa_simple_server "folder_to_host"
+lwa_simple_server "folder_to_host/current_by_default"
 ```
 
 
